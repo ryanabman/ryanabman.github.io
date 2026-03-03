@@ -411,6 +411,13 @@ img {
   border-top: 1px solid var(--color-border);
 }
 
+.project-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .project-title {
   font-size: 0.975rem;
   color: var(--color-text);
@@ -422,6 +429,64 @@ img {
   font-size: 0.85rem;
   color: var(--color-muted);
   line-height: 1.5;
+}
+
+.abstract-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: 99px;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: var(--font-sans);
+  transition: all var(--transition);
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.abstract-toggle:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.abstract-toggle svg {
+  transition: transform var(--transition);
+}
+
+.abstract-toggle[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.abstract-toggle[aria-expanded="true"] {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.abstract-body {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s ease;
+}
+
+.abstract-body.open {
+  max-height: 600px;
+}
+
+.abstract-body p {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  line-height: 1.75;
+  padding: 0.75rem 1rem;
+  background: var(--color-alt);
+  border-radius: var(--radius);
+  border-left: 2px solid var(--color-accent);
 }
 
 /* ── Publications ──────────────────────────────────── */
