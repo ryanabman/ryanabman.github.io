@@ -36,7 +36,7 @@ document.querySelectorAll('.abstract-toggle').forEach(btn => {
   btn.addEventListener('click', () => {
     const expanded = btn.getAttribute('aria-expanded') === 'true';
     btn.setAttribute('aria-expanded', String(!expanded));
-    const body = btn.closest('.project-item').querySelector('.abstract-body');
+    const body = btn.closest('.project-item, .pub-item').querySelector('.abstract-body');
     body.classList.toggle('open', !expanded);
   });
 });
